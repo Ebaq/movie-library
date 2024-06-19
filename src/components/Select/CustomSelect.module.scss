@@ -1,0 +1,53 @@
+.selectWrapper {
+	position: relative;
+	border-bottom: none;
+}
+
+.border {
+	border: 1px solid #000;
+	border-radius: 4px;
+	width: 200px;
+	height: fit-content;
+	overflow: hidden;
+}
+
+.options {
+	overflow: hidden;
+	max-height: 0px;
+	transition: all 0.3s ease-in-out;
+	visibility: hidden;
+	border: none;
+	opacity: 0;
+}
+
+.placeholder {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 40px;
+	padding: 10px;
+	cursor: pointer;
+	border: 1px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: #fff;
+	background-color: #1a1a1a;
+	width: 100%;
+	border-radius: 2px;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	line-clamp: 1;
+	-webkit-box-orient: vertical;
+	font-weight: 500;
+}
+
+.selectWrapper[data-is-active='true'] .options {
+	overflow-y: scroll;
+	max-height: 200px;
+	transition: all 0.3s ease-in-out;
+	visibility: visible;
+	opacity: 1;
+}

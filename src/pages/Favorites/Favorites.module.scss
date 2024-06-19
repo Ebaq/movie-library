@@ -1,0 +1,240 @@
+.Page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: 60px;
+	min-height: calc(100vh - 140px);
+
+	&-content {
+		width: 100%;
+		min-height: 550px;
+		display: flex;
+		justify-content: center;
+		gap: 40px;
+		.filters {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			.filter {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+
+				h3 {
+					color: #fff;
+				}
+			}
+
+			&-input-wrapper {
+				display: flex;
+				gap: 5px;
+				width: 200px;
+
+				.range-input {
+					background-color: #1a1a1a;
+					border-radius: 6px;
+					width: 80px;
+					height: 40px;
+					outline: none;
+					border: none;
+					color: #fff;
+					text-align: center;
+					width: 50%;
+					font-size: 16px;
+					font-weight: 500;
+
+					&:focus {
+						background-color: #212121;
+					}
+				}
+			}
+
+			.submit {
+				background-color: #1a1a1a;
+				border-radius: 6px;
+				font-weight: 600;
+				border: none;
+				padding: 10px;
+				color: #fff;
+				transition: all 0.2s ease-in-out;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #212121;
+				}
+
+				&:active {
+					background-color: #181818;
+				}
+			}
+		}
+
+		.movies-list {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: min-content;
+			gap: 40px;
+
+			.movie {
+				display: flex;
+				gap: 20px;
+				position: relative;
+				// height: 200px;
+				// background-color: #1a1a1a;
+				// border-radius: 10px;
+				padding: 12px 16px 12px 12px;
+				max-height: 224px;
+				transition: all 0.2s ease-in-out;
+				max-width: 500px;
+
+				&-bg {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					height: 100%;
+					width: 100%;
+					z-index: 0;
+					background-color: #1a1a1a;
+					transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+					border-radius: 10px;
+				}
+
+				&:hover {
+					background-color: #212121;
+					.movie-bg {
+						content: '';
+						position: absolute;
+						left: -3%;
+						top: -2%;
+						height: 104%;
+						width: 106%;
+						z-index: 0;
+						background-color: #212121;
+					}
+				}
+
+				&-info {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					height: 100%;
+					gap: 10px;
+					z-index: 1;
+					width: 100%;
+					max-width: 302px;
+
+					.title {
+						display: flex;
+						flex-direction: column;
+						gap: 2px;
+
+						&-name {
+							color: #fff;
+						}
+
+						&-altName {
+							color: #fff;
+							opacity: 0.7;
+							font-size: 12px;
+						}
+					}
+					.movie-year {
+						color: #fff;
+						font-size: 12px;
+						opacity: 0.8;
+					}
+				}
+
+				&-poster {
+					height: 200px;
+					min-width: 140px;
+					border-radius: 6px;
+					background-color: #2d2d2d;
+					z-index: 1;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					h4 {
+						color: #fff;
+					}
+				}
+
+				&-description {
+					color: #fff;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-line-clamp: 4; /* number of lines to show */
+					line-clamp: 4;
+					-webkit-box-orient: vertical;
+					z-index: 1;
+					// white-space: nowrap;
+				}
+
+				&-rating {
+					color: #fff;
+					font-size: 12px;
+					opacity: 0.9;
+					// height: 100%;
+					display: flex;
+					justify-self: flex-end;
+					z-index: 1;
+				}
+
+				&-bottom {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					height: 32px;
+
+					svg[data-active='false'] {
+						transition: all 0.2s ease-in-out;
+
+						&:hover {
+							fill: #ff4f6754;
+						}
+					}
+
+					svg[data-active='true'] {
+						transition: all 0.2s ease-in-out;
+
+						&:hover {
+							fill: #ff4f67b8;
+						}
+					}
+				}
+			}
+		}
+	}
+	.pages {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		height: fit-content;
+
+		&-count {
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+
+		.arrow {
+			width: 30px;
+			height: 30px;
+
+			&-left {
+				rotate: 180deg;
+			}
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+}

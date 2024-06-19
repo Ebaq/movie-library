@@ -1,0 +1,28 @@
+.option {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 10px;
+	border: 1px;
+	cursor: pointer;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	background-color: #212121;
+	color: #fff;
+	font-weight: 500;
+}
+
+.option[data-selected='true']:hover {
+	background-color: #ae3232;
+}
+
+.option[data-selected='false']:hover {
+	background-color: #2f2f2f;
+}
+
+.option[data-selected='true'] {
+	background-color: #c23838;
+	color: #fff;
+}

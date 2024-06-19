@@ -1,0 +1,8 @@
+.contentWrapper {
+	min-height: 100vh;
+	background: linear-gradient(#000 80%, #1c0909 120%);
+	.Main {
+		padding: 40px 100px;
+		min-height: calc(100vh - 60px);
+	}
+}
